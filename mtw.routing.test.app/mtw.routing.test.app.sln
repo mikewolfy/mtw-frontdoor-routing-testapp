@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mtw.routing.test.app", "mtw.routing.test.app.csproj", "{33D199B3-A81E-41D2-865A-DE819C496B82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33D199B3-A81E-41D2-865A-DE819C496B82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33D199B3-A81E-41D2-865A-DE819C496B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33D199B3-A81E-41D2-865A-DE819C496B82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33D199B3-A81E-41D2-865A-DE819C496B82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6BACA52C-A6FC-42B4-A4FA-666CFAFEDAF6}
+	EndGlobalSection
+EndGlobal
