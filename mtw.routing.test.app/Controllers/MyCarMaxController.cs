@@ -25,11 +25,19 @@ namespace mtw.routing.test.app.Controllers
         // GET: MyCarMaxController
         public ActionResult Index()
         {
+            string parsedParams = string.Empty;
+            foreach (var key in HttpContext.Request.Query.Keys)
+            {
+                parsedParams += key + ":" + HttpContext.Request.Query[key] + ",";
+            }
+
             ViewBag.AppName = _config["AppName"];
             ViewBag.Count = _counter.GetCount();
             ViewBag.Color = _config["Color"];
             ViewBag.EncodedUrl = HttpContext.Request.GetEncodedUrl();
             ViewBag.DisplayUrl = HttpContext.Request.GetDisplayUrl();
+            ViewBag.Query = HttpContext.Request.QueryString;
+            ViewBag.QueryParams = parsedParams;
             return View();
         }
     }

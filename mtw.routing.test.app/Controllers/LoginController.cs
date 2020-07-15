@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
@@ -28,9 +29,18 @@ namespace mtw.routing.test.app.Controllers
 
         public IActionResult Index()
         {
+            string parsedParams = string.Empty;
+
+            foreach (var key in HttpContext.Request.Query.Keys)
+            {
+                parsedParams += key + ":" + HttpContext.Request.Query[key] + ",";
+            }
+
             ViewBag.Count = _counter.GetCount();
             ViewBag.EncodedUrl = HttpContext.Request.GetEncodedUrl();
             ViewBag.DisplayUrl = HttpContext.Request.GetDisplayUrl();
+            ViewBag.Query = HttpContext.Request.QueryString;
+            ViewBag.QueryParams = parsedParams;
             ViewBag.AppName = _config["AppName"];
             ViewBag.Color = _config["Color"];
             return View();
