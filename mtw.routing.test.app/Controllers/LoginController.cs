@@ -36,11 +36,19 @@ namespace mtw.routing.test.app.Controllers
                 parsedParams += key + ":" + HttpContext.Request.Query[key] + ",";
             }
 
+            string parsedHeaders = string.Empty;
+
+            foreach(var header in HttpContext.Request.Headers.Keys)
+            {
+              parsedHeaders += "    " + header + ": " + HttpContext.Request.Headers[header] + "\n";
+            }
+
             ViewBag.Count = _counter.GetCount();
             ViewBag.EncodedUrl = HttpContext.Request.GetEncodedUrl();
             ViewBag.DisplayUrl = HttpContext.Request.GetDisplayUrl();
             ViewBag.Query = HttpContext.Request.QueryString;
             ViewBag.QueryParams = parsedParams;
+            ViewBag.Headers = parsedHeaders;
             ViewBag.AppName = _config["AppName"];
             ViewBag.Color = _config["Color"];
             return View();
